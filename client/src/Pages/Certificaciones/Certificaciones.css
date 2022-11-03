@@ -1,0 +1,64 @@
+.popular .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .popular .box-container .box {
+    border-radius: .5rem;
+  position: relative;
+  background: #e61f1f;
+  padding: 2rem;
+  text-align: center;
+  }
+
+/* .popular .box-container .box{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: #666;
+    cursor: pointer;
+  } */
+
+  /* .popular .box-container .box .fa-heart:hover {
+    color: #27ae60;
+  } */
+
+  .popular .box-container .box .image {
+    margin: 1rem 0;
+  }
+
+  .popular .box-container .box .image{
+    height: 15rem;
+  }
+
+  .popular .box-container .box .content{
+    font-size: 2rem;
+    color: #130f40;
+  }
+  
+  .popular .box-container .box .content .stars {
+    padding: 1rem 0;
+    font-size: 1.7rem;
+  }
+
+  .popular .box-container .box .content .stars{
+    color: gold;
+  }
+  
+  .popular .box-container .box .content .stars {
+    color: #666;
+  }
+  
+  .popular .box-container .box .content .price {
+    font-size: 2rem;
+    color: #130f40;
+  }
+  
+  .popular .box-container .box .content .price{
+    font-size: 1.5rem;
+    color: #666;
+    text-decoration: line-through;
+  }
+

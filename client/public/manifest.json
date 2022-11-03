@@ -1,0 +1,22 @@
+{
+    "background_color": "#F9C581",
+    "categories":["lifestyle"],
+    "description":"Una PWA   con servicios de localización",
+    "dir":"ltr",
+    "display_override":["standalone","fullscreen"],
+    "display":"standalone",
+    "icons":[
+      {
+        "src":"logo-removebg-preview (1).png",
+        "sizes":"192x192",
+        "type":"image/png"
+      }
+    ],
+    "lang":"es-AR",
+    "name":"PWA ServiProf",
+    "orientation":"portrait",
+    "prefer_related_application":false,
+    "scope":"/",
+    "short_name":"PWA ServiProf",
+    "theme_color":"orange"
+}

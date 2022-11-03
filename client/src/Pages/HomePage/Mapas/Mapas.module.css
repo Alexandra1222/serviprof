@@ -1,0 +1,139 @@
+.hero {
+    /* background: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80')
+      no-repeat center/cover; */
+    background-image: url("../../../img/Mapa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    display: flex;
+  }
+
+  /* ESTILOS  DEL TEXTO Y BOTONES */
+
+  .driver {
+    max-width: 1040px;
+    margin: auto;
+    padding:  1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+
+.driver h2 {
+    padding-top: 30%;
+}
+
+.driver span {
+    color: #f01111;
+}
+
+.driver p {
+    font-size: 2rem;
+    color: #333;
+    padding: 1.5rem 0;
+}
+
+.driver button {
+    background-color: #EBA441;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 18px;
+    border: none;
+}
+
+.driver button:hover {
+    background-color: #BD6A1B;
+    transition: background-color 1s;
+}
+
+@media screen and (max-width: 920px) {
+    .driver {
+        grid-template-columns: 1fr;
+    }
+
+    
+
+    .driver .left {
+        display:inline-flex;
+        justify-content: center;
+    }
+
+    .driver h2 {
+        padding-top: 10%;
+    }
+}
+
+  /* ESTILOS DEL TEXTO Y BOTONES */
+
+  
+  
+  @media screen and (max-width: 720px) {
+    
+  
+  
+    form .text,
+    .from,
+    .until {
+      width: 100%;
+      padding: 0.2rem;
+    }
+  
+    .from,
+    .until {
+      border-left: none;
+    }
+  
+    form .text_input {
+      font-size: 0.8rem;
+    }
+  
+    form .text,
+    .from,
+    .until,
+    input {
+      font-size: 0.8rem;
+    }
+  
+    form label {
+      padding: 0.4rem 0;
+    }
+  
+    .border {
+      border-top: 1px solid #333;
+      padding: 8px;
+  
+    }
+  
+    .search_btn {
+      width: 100%;
+      border-top: 1px solid #333;
+      padding: 8px 0;
+    }
+  
+    .hero .btn {
+      display: block;
+      background-color: #593cfb;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      width: 100%;
+      padding: 12px 18px;
+      margin: .5rem 0;
+      cursor: pointer;
+    }
+  
+    .hero .btn:hover {
+      background-color: #4733b7;
+      transition: background-color 1s;
+    }
+  
+    .hero .icon {
+      display: none;
+    }
+  }
+
