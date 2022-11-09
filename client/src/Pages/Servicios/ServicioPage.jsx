@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Navigate,useLocation} from "react-router-dom" 
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom'
 import DefaultPhoto from '../../img/logo.png'
@@ -42,25 +43,24 @@ const ServicioPage = () => {
     return (
         <div className="popular" id="popular">
         
-            {/* <h2 className='mt-5 mb-5'>Servicios Recientes</h2> */}
-            <div className='row'>
+            
+            <div className='"box-container"'>
                 {!servicios ? <h2>Cargando...</h2> :
                     servicios.map((servicio) => {
                         let photoUrl = servicio.fotoServicio ? `http://localhost:5000/api/v1/servicios/photo/${servicio.id}?${new Date().getTime()}` : DefaultPhoto
 
                         return <div className="box" key={servicio._id}>
                             <>
-                                <MDBCardImage className="image"
+                            <MDBCardImage className="image"
                                     src={photoUrl}
                                     alt={servicio.name}
-                                    /* style={{ height: "300px", width: "100%", objectFit: "cover" }} */
                                 />
                                 <div className="content">
                                     <div className="price">{servicio.nombre}</div>
                                     <div className="stars">
                                         {servicio.servicio}
                                     </div>
-                                    <Link to={`edit/${servicio._id}`} state={{ ...servicio }}
+                                    <Link to={`/editarservicio/${servicio._id}`} state={{ ...servicio }}
                                         className="btn"
                                     >Editar</Link>
                                     <button

@@ -13,19 +13,22 @@ import Trabajos from "./Pages/Trabajos/Trabajos"
 import AgregarCertificacion from "./Pages/Certificaciones/AgregarCertificacion";
 import EditarCertificacion from "./Pages/Certificaciones/EditarCertificacion";
 import Certificaciones from "./Pages/Certificaciones/Certificaciones";
+import AgregarPrestador from "./Pages/Prestadores/AgregarPrestador";
+import EditarPrestador from "./Pages/Prestadores/EditarPrestador";
+import Prestadores from "./Pages/Prestadores/Prestadores";
 import MapadeServicioscercanosPage from "./Pages/Maps/MapadeServicioscercanosPage";
+import NotFoundPage from "./Pages/NotFound/NotFoundPage";
 /* import ServiciosPage from "./Pages/Categorias/ServiciosPage";
 import TodosLosServiciosPage from "./Pages/Servicios/TodosLosServiciosPage";
 import MapadeServicioscercanosPage from "./Pages/Maps/MapadeServicioscercanosPage";
 import DetalleProfesionalPage from "./Pages/Proveedores/DetalleProfesionalPage"
  */
-
-import NotFoundPage from "./Pages/NotFound/NotFoundPage";
+//import Layout from "./components/Layouts/Layout";
 import { Routes, Route, Router, BrowserRouter } from 'react-router-dom';
 
 
 
-//import Layout from "./components/Layouts/Layout";
+
 
 
 
@@ -40,14 +43,17 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/nuevoServicio" element={<AgregarServicios />} />
-          <Route path="/editarservicio" element={<EditarServicios />} />
+          <Route path="/editarservicio/:Id" element={<EditarServicios />} />
           <Route path="/servicios" element={<ServicioPage />} />
           <Route path="/nuevotrabajo" element={<AgregarTrabajo />} />
-          <Route path="/editarTrabajo/:trabajoId" element={<EditarTrabajos />} />
+          <Route path="/editarTrabajo/:Id" element={<EditarTrabajos />} />
           <Route path="/trabajos" element={<Trabajos />} />
           <Route path="/nuevacertificacion" element={<AgregarCertificacion />} />
           <Route path="/editarcertificacion" element={<EditarCertificacion />} />
           <Route path="/certificaciones" element={<Certificaciones />} />
+          <Route path="/agregarprestador" element={<AgregarPrestador />} />
+          <Route path="/editarprestador" element={<EditarPrestador />} />
+          <Route path="/prestadores" element={<Prestadores />} />
           <Route path="/mapaservicioscerca" element={<MapadeServicioscercanosPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

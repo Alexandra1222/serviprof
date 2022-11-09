@@ -1,19 +1,23 @@
-/* import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const model = mongoose.model;
 
 
+const PrestadoresSchema = new Schema(
 
-
-const PrestadorSchema = new Schema(
-
-  {
-    telefono: { type: String },
-    fotosCertificaciones: { type: String },
-    fotoTrabajo: { type: String },
-  }
+    {
+        nombrePrestador: { type: String },
+        dni: { type: String },
+        fechaNacimiento: { type: String },
+        sexo: { type: String },
+        numeroTelefono: { type: String },
+        fotoPerfil: {
+            data: Buffer,
+            contentType: String,
+        }
+    }
 );
 
-export default model('Prestador', PrestadorSchema);
- */
+export default model('Prestadores', PrestadoresSchema);
+
 

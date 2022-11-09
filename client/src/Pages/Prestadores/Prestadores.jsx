@@ -4,32 +4,32 @@ import { Link } from 'react-router-dom'
 import DefaultPhoto from '../../img/logo.png'
 import Header from '../HomePage/Header/Header'
 
-const Trabajos = () => {
-    const [trabajos, setTrabajos] = useState([])
+const Prestadores = () => {
+    const [prestadores, setPrestadores] = useState([])
     const [borrar,setBorrar] = useState({})
 
-    const eliminarTrabajo = async(id)=>{
-        let response = await fetch(`http://localhost:5000/api/v1/trabajos/delete/${id}`,{
+    const eliminarPrestador = async(id)=>{
+        let response = await fetch(`http://localhost:5000/api/v1/prestador/delete/${id}`,{
             method:'DELETE'
         })
         const data = await response.json()
         setBorrar(data)
     }
 
-    const confirmarBorrado = (trabajoId)=>{
-        let ans = window.confirm("estas seguro que queres eliminar este trabajo?")
+    const confirmarBorrado = (prestadorId)=>{
+        let ans = window.confirm("estas seguro que queres eliminar este Prestador?")
         if(ans){
-            eliminarTrabajo(trabajoId)
+            eliminarPrestador(prestadorId)
         }
     }
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/v1/trabajos/getTrabajos', {
+                const res = await fetch('http://localhost:5000/api/v1/prestador/getprestadores', {
                     method: 'GET'
                 })
                 const data = await res.json();
-                setTrabajos(data)
+                setPrestadores(data)
             }
             catch (err) {
                 console.log(err)
@@ -44,28 +44,28 @@ const Trabajos = () => {
             
             
             <div className="box-container">
-                {!trabajos ? <h2>Cargando..</h2> :
-                    trabajos.map((trabajo) => {
-                        let photoUrl = trabajo.fotoTrabajo ? `http://localhost:5000/api/v1/trabajos/photo/${trabajo._id}?${new Date().getTime()}` : DefaultPhoto
+                {!prestadores ? <h2>Cargando..</h2> :
+                    prestadores.map((prestador) => {
+                        let photoUrl = prestador.fotoPerfil ? `http://localhost:5000/api/v1/prestador/photo/${prestador._id}?${new Date().getTime()}` : DefaultPhoto
 
-                        return <div  className="box" key={trabajo._id}>
+                        return <div  className="box" key={prestador._id}>
                             <>
                                 <MDBCardImage className="image"
                                     src={photoUrl}
-                                    alt={trabajo.name}
+                                    alt={prestador.name}
                                     /* style={{ height: "300px", width: "100%", objectFit: "cover" }} */
                                 />
                                 <div className="content">
-                                <div className="price">{trabajo.nombreTrabajo}</div>
+                                <div className="price">{prestador.nombrePrestador}</div>
                                     <div className="stars">
-                                        {trabajo.presupuesto}
+                                        {prestador.numeroTelefono}
                                     </div>
-                                    <Link to={`/editarTrabajo/${trabajo._id}`} state={{ ...trabajo }}
+                                    <Link to={`/editarPrestador/${prestador._id}`} state={{ ...prestador }}
                                         /* className='btn btn-warning' */
                                     >Editar</Link>
                                     <button className="btn"
                                         /* className='btn btn-danger ms-3' */
-                                        onClick={()=>confirmarBorrado(trabajo._id)}
+                                        onClick={()=>confirmarBorrado(prestador._id)}
                                     >
                                         Eliminar
                                     </button>
@@ -82,4 +82,4 @@ const Trabajos = () => {
     )
 }
 
-export default Trabajos
+export default Prestadores

@@ -6,8 +6,9 @@ import servicios from './routes/servicios.js';
 import categoria from './routes/categoria.js';
 import certificaciones from './routes/certificaciones.js';
 import trabajos from './routes/trabajos.js';
-/* import perfiles from './routes/perfiles.js'; */
-/* import prestador from './routes/prestador.js'; */
+import prestador from './routes/prestador.js';
+
+
 
 const app = express()
 
@@ -38,8 +39,7 @@ app.use('/api/v1/servicios', servicios);
 app.use('/api/v1/categoria', categoria);
 app.use('/api/v1/certificaciones', certificaciones);
 app.use('/api/v1/trabajos', trabajos);
-/* app.use('/api/v1/perfiles', perfiles); */
-/* app.use('/api/v1/prestador', prestador); */
+app.use('/api/v1/prestador', prestador);
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }))
 
 

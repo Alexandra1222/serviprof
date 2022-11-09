@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import './AgregarServicios.css'
 
 
@@ -94,9 +95,9 @@ const AgregarServicios = () => {
             <button className='btn btn-raised btn-primary mt-2' onClick={()=>submit()}>Guardar</button>
         </form>
     }
-    /* if(open){
+   /*  if(open){
        return  <Navigate to="/" />
-    } */
+    }  */
   return (
     <div className='container'>
         <h2 className='mt-5 mb-5'>Alta de Servicio</h2>
